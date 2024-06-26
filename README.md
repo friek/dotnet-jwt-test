@@ -24,7 +24,7 @@ Then, run the "weather forecast" service and test authentication as follows:
 curl -v -H "Authorization: Bearer <JWT>" http://localhost:5165/WeatherForecast
 ```
 
-The first time, the application will request `https://<keycloak url>/realms/<realm name>/protocol/openid-connect/certs`
+The first time an authentication request is made, the application will request `https://<keycloak url>/realms/<realm name>/protocol/openid-connect/certs`
 which contains the public keys of the issued JWT. I'm not sure if it's being
 cached for a certain time or for the remainder of the application runtime,
 but subsequent calls to the weather forecast service will not trigger the request
